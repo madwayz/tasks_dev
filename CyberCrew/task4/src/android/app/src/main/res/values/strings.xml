@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DNS Resolver</string>
+    <string name="INPUT_DN">Введите доменное имя</string>
+    <string name="resolve">RESOLVE</string>
+</resources>

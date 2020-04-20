@@ -1,0 +1,2 @@
+rootProject.name='DNS Resolver'
+include ':app'
