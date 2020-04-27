@@ -2,13 +2,10 @@ from flask import request, jsonify
 import requests as req
 
 from code import app
-import re
-from sys import stdout, stderr
 
 @app.route('/resolve', methods=['GET', 'POST'])
 def resolve():
     domain = request.args.get('domain')
-    get_flag = request.args.get('get_flag')
 
     if not domain:
         return jsonify({'error': 'Check fields and try again.'})

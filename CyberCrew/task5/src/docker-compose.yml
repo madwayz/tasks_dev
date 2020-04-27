@@ -1,13 +1,13 @@
 version: "2.4"
 services:
-  backend:
-    container_name: task4
+  task5:
+    container_name: task5
     build:
       context: .
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 7070:7070
+      - 7171:7171
     volumes:
       - ./code:/code:ro
     read_only: true
