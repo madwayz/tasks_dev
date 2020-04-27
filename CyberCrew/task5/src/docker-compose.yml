@@ -2,6 +2,7 @@ version: "2.4"
 services:
   task5:
     container_name: task5
+    user: nobody
     build:
       context: .
       dockerfile: Dockerfile

